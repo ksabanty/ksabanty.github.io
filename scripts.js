@@ -141,24 +141,57 @@ function getStrokes(playerIds) {
 //     }
 // }
 
-function sort_table(tbody, col, asc){
-    var rows = tbody.rows, rlen = rows.length, arr = new Array(), i, j, cells, clen;
+// function sort_table(tbody, col, asc){
+//     var rows = tbody.rows, rlen = rows.length, arr = new Array(), i, j, cells, clen;
+//     // fill the array with values from the table
+//     for(i = 0; i < rlen; i++){
+//     cells = rows[i].cells;
+//     clen = cells.length;
+//     arr[i] = new Array();
+//         for(j = 0; j < clen; j++){
+//         arr[i][j] = cells[j].innerHTML;
+//         }
+//     }
+//     // sort the array by the specified column number (col) and order (asc)
+//     arr.sort(function(a, b){
+//         return (a[col] == b[col]) ? 0 : ((a[col] > b[col]) ? asc : 1*asc);
+//     });
+//     for(i = 0; i < rlen; i++){
+//         arr[i] = "<td>"+arr[i].join("</td><td>")+"</td>";
+//     }
+//     tbody.innerHTML = "<tr>"+arr.join("</tr><tr>")+"</tr>";
+// }
+
+function sort_table(tbody, col, asc)
+{
+    var rows = tbody.rows;
+    var rlen = rows.length;
+    var arr = new Array();
+    var i, j, cells, clen;
     // fill the array with values from the table
-    for(i = 0; i < rlen; i++){
-    cells = rows[i].cells;
-    clen = cells.length;
-    arr[i] = new Array();
-        for(j = 0; j < clen; j++){
-        arr[i][j] = cells[j].innerHTML;
-        }
+    for(i = 0; i < rlen; i++)
+    {
+        cells = rows[i].cells;
+        clen = cells.length;
+        arr[i] = new Array();
+      for(j = 0; j < clen; j++) { arr[i][j] = cells[j].innerHTML; }
     }
     // sort the array by the specified column number (col) and order (asc)
-    arr.sort(function(a, b){
-        return (a[col] == b[col]) ? 0 : ((a[col] > b[col]) ? asc : 1*asc);
+    arr.sort(function(a, b)
+    {
+        var retval=0;
+        var fA=parseFloat(a[col]);
+        var fB=parseFloat(b[col]);
+        if(a[col] != b[col])
+        {
+            if((fA==a[col]) && (fB==b[col]) ){ retval=( fA > fB ) ? asc : -1*asc; } //numerical
+            else { retval=(a[col] > b[col]) ? asc : -1*asc;}
+        }
+        return retval;      
     });
-    for(i = 0; i < rlen; i++){
-        arr[i] = "<td>"+arr[i].join("</td><td>")+"</td>";
+    for(var rowidx=0;rowidx<rlen;rowidx++)
+    {
+        for(var colidx=0;colidx<arr[rowidx].length;colidx++){ tbody.rows[rowidx].cells[colidx].innerHTML=arr[rowidx][colidx]; }
     }
-    tbody.innerHTML = "<tr>"+arr.join("</tr><tr>")+"</tr>";
 }
 
