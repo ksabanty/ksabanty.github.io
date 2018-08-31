@@ -52,3 +52,13 @@ th {
 #scoreboard {
     display: none;
 }
+
+@media all and (max-width: 650px) {
+    table {
+        margin: 0;
+    }
+    td, th {
+        padding: 5px 10px;
+        font-size: 16px;
+    }
+}
