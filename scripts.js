@@ -80,8 +80,12 @@ function getScores(playerIds) {
             for (j = 0; j < data.leaderboard.players.length; j++) {
                 if (playerIds[j] == data.leaderboard.players[i].player_id) {
                     // console.log(data.leaderboard.players[i].total + " " + data.leaderboard.players[i].player_bio.last_name);
+                    if (data.leaderboard.players[i].total == 0) {
+                        scoreDisp[j].innerText = 'E';
+                    } else {
                     scoreDisp[j].innerText = data.leaderboard.players[i].total;
                     // console.log(playerIds);
+                    }
                 }
             }
         }
