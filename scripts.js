@@ -80,12 +80,12 @@ function getScores(playerIds) {
             for (j = 0; j < data.leaderboard.players.length; j++) {
                 if (playerIds[j] == data.leaderboard.players[i].player_id) {
                     // console.log(data.leaderboard.players[i].total + " " + data.leaderboard.players[i].player_bio.last_name);
-                    if (data.leaderboard.players[i].total == 0) {
-                        scoreDisp[j].innerText = 'E';
-                    } else {
+                    // if (data.leaderboard.players[i].total == 0) {
+                    //     scoreDisp[j].innerText = 'E';
+                    // } else {
                     scoreDisp[j].innerText = data.leaderboard.players[i].total;
                     // console.log(playerIds);
-                    }
+                    // }
                 }
             }
         }
@@ -107,7 +107,7 @@ function getStrokes(playerIds) {
             for (j = 0; j < data.leaderboard.players.length; j++) {
                 if (playerIds[j] == data.leaderboard.players[i].player_id) {
                     // console.log(data.leaderboard.players[i].total + " " + data.leaderboard.players[i].player_bio.last_name);
-                    strokeDisp[j].innerText = data.leaderboard.players[i].total_strokes;
+                    strokeDisp[j].innerText = data.leaderboard.players[i].current_position;
                     // console.log(playerIds);
                 }
             }
@@ -154,10 +154,11 @@ function sort_table(tbody, col, asc){
     }
     // sort the array by the specified column number (col) and order (asc)
     arr.sort(function(a, b){
-        return (a[col] == b[col]) ? 0 : ((a[col] > b[col]) ? asc : -1*asc);
+        return (a[col] == b[col]) ? 0 : ((a[col] > b[col]) ? asc : 1*asc);
     });
     for(i = 0; i < rlen; i++){
         arr[i] = "<td>"+arr[i].join("</td><td>")+"</td>";
     }
     tbody.innerHTML = "<tr>"+arr.join("</tr><tr>")+"</tr>";
 }
+
