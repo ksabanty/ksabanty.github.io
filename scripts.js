@@ -56,8 +56,8 @@ window.onload = function() {
     getScores(golfers);
     getStrokes(golfers);
     people = document.getElementById("people");
-    setTimeout(function(){ defaultSort(); }, 200);
-    setTimeout(function(){ document.getElementById("scoreboard").style.display='block';}, 300);
+    setTimeout(function(){ defaultSort(); }, 250);
+    setTimeout(function(){ document.getElementById("scoreboard").style.display='block';}, 500);
 };
 
 function defaultSort() {
