@@ -1,1 +1,123 @@
-Hello World
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Draft Order App</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles.css">
+        <link href="https://fonts.googleapis.com/css?family=Carter+One" rel="stylesheet">
+    </head>
+    <body>
+        <!-- <h1>Draft Order App</h1> -->
+
+        <!-- <h3>Enter League Members</h3> -->
+        <!-- <input type="text" id="leagueMember"> -->
+        <!-- <input type='button' onclick='addMember()' value='Add to Draft'/> -->
+
+        <!-- <ol id="draftList">
+            <li>Kerry</li>
+            <li>Zach</li>
+            <li>Eric</li>
+            <li>Bova</li>
+            <li>Leeds</li>
+            <li>Tim</li>
+            <li>Jon</li>
+            <li>Meg</li>
+            <li>Bre</li>
+            <li>Denis</li>
+        </ol> -->
+
+         <table id="scoreboard">
+            <thead>
+                <tr>
+                    <th>League Member</th>
+                    <th>Golfer</th>
+                    <th data-autoclick="true" id="strokeHeader" onclick="sort_table(people, 2, asc3); asc3 *= -1; asc1 = 1; asc2 = 1;">Strokes</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+            <tbody id="people">
+            <tr>
+                <td>Kerry</td>
+                <td id="lName">Scott</td>
+                <!-- <td id="position"></td> -->
+                <td class="strokes"></td>
+                <td id="score"></td>
+            </tr>
+            <tr>
+                <td>Zach</td>
+                <td id="lName">Oosthuizen</td>
+                <!-- <td id="position"></td> -->
+                <td class="strokes"></td>
+                <td id="score"></td>
+            </tr>
+            <tr>
+                <td>Eric</td>
+                <td id="lName">Woodland</td>
+                <!-- <td id="position"></td> -->
+                <td class="strokes"></td>
+                <td id="score"></td>
+            </tr>
+            <tr>
+                <td>Bova</td>
+                <td id="lName">Z Johnson</td>
+                <!-- <td id="position"></td> -->
+                <td class="strokes"></td>
+                <td id="score"></td>
+            </tr>
+            <tr>
+                <td>Leeds</td>
+                <td id="lName">Leishman</td>
+                <!-- <td id="position"></td> -->
+                <td class="strokes"></td>
+                <td id="score"></td>
+            </tr>
+            <tr>
+                <td>Tim</td>
+                <td id="lName">McIlroy</td>
+                <!-- <td id="position"></td> -->
+                <td class="strokes"></td>
+                <td id="score"></td>
+            </tr>
+            <tr>
+                <td>Jon</td>
+                <td id="lName">Rahm</td>
+                <!-- <td id="position"></td> -->
+                <td class="strokes"></td>
+                <td id="score"></td>
+            </tr>
+            <tr>
+                <td>Meg</td>
+                <td id="lName">Koepka</td>
+                <!-- <td id="position"></td> -->
+                <td class="strokes"></td>
+                <td id="score"></td>
+            </tr>
+            <tr>
+                <td>Bre</td>
+                <td id="lName">Rose</td>
+                <!-- <td id="position"></td> -->
+                <td class="strokes"></td>
+                <td id="score"></td>
+            </tr>
+            <tr>
+                <td>Denis</td>
+                <td id="lName">Simpson</td>
+                <!-- <td id="position"></td> -->
+                <td class="strokes"></td>
+                <td id="score"></td>
+            </tr>
+            </tbody>
+        </table>
+
+        <!-- <input type='button' onclick='randomizeOrder()' value='Randomize'/> -->
+        <!-- <input type='button' id="assign" onclick='assignGolfer()' value='Assign Golfer'/> -->
+        <!-- <input type='button' id="assign" onclick='assignGolfer()' value='Assign Golfer'/> -->
+        
+        <script src="scripts.js" async defer></script>
+    </body>
+</html>
