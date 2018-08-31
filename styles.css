@@ -46,6 +46,7 @@ th {
     cursor: pointer;
     color: white;
     font-family: 'Carter One', cursive;
+    text-align: center;
 }
 
 #scoreboard {
